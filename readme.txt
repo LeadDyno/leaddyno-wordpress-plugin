@@ -1,9 +1,9 @@
 === LeadDyno Wordpress Plugin ===
 Contributors: leaddyno
 Tags: analytics, statistics, leaddyno, affiliate, outbound links, analysis
-Requires at least: 2.8
-Tested up to: 4.1
-Stable tag: 1.6
+Requires at least: 3.0
+Tested up to: 4.9.4
+Stable tag: 1.8.4
 
 Integrates the LeadDyno affiliate tracking and web analytics service into your blog/wordpress/woocommerce site.
 
@@ -31,6 +31,18 @@ buttons on your site that you want LeadDyno to track.
 
 
 == Changelog ==
+
+= 1.8.4 =
+
+* Handle woocommerce refunded state as a purchase cancellation
+
+= 1.8.2 =
+
+* Clean up code, test with latest wordpress.
+
+= 1.7 =
+
+* Fixed inclusion of sales tax in Woocommerce transactions
 
 = 1.6 =
 
