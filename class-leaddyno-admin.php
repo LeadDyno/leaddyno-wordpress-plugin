@@ -2,7 +2,7 @@
 /**
  * MyClass Class Doc Comment
  * Plugin Name: LeadDyno WordPress Plugin
- * Version: 1.8.4
+ * Version: 1.8.5
  * Plugin URI: http://www.leaddyno.com/wordpress/
  * Description: Integrates LeadDyno on your WordPress site
  * Author: LeadDyno
@@ -356,25 +356,25 @@ function leaddyno_script() {
 	wp_enqueue_script( 'custom-script', 'https://static.leaddyno.com/js' );
 	?>
 	<script>
-	jQuery( document ).ready( function( $ ) {
-		LeadDyno.key = "<?php echo esc_html( $options['public_key'] ); ?>";
-		<?php
-		if ( $options['domain'] ) {
-			echo "LeadDyno.domain = '" . esc_html( $options['domain'] ) . "';\n";
-		}
-		?>
-		LeadDyno.recordVisit();
-		<?php
-		if ( $options['enable_paypal'] ) {
-			echo "LeadDyno.initPaypal();\n";
-		}
-		?>
-			<?php
-			if ( ! $options['disable_autowatch'] ) {
-				echo "LeadDyno.autoWatch();\n";
-			}
-		?>
-	} );
+
+    LeadDyno.key = "<?php echo esc_html( $options['public_key'] ); ?>";
+    <?php
+    if ( $options['domain'] ) {
+        echo "LeadDyno.domain = '" . esc_html( $options['domain'] ) . "';\n";
+    }
+    ?>
+    LeadDyno.recordVisit();
+    <?php
+    if ( $options['enable_paypal'] ) {
+        echo "LeadDyno.initPaypal();\n";
+    }
+    ?>
+        <?php
+        if ( ! $options['disable_autowatch'] ) {
+            echo "LeadDyno.autoWatch();\n";
+        }
+    ?>
+
 	</script>
 <?php
 	return true;
