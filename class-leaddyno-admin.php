@@ -2,7 +2,7 @@
 /**
  * MyClass Class Doc Comment
  * Plugin Name: LeadDyno WordPress Plugin
- * Version: 1.9
+ * Version: 1.9.1
  * Plugin URI: http://www.leaddyno.com/wordpress/
  * Description: Integrates LeadDyno on your WordPress site
  * Author: LeadDyno
@@ -406,7 +406,7 @@ function leaddyno_order_status_changed( $order_id ) {
 		$order = new WC_Order( $order_id );
 		if ( $order ) {
 
-			if ( 'pending' === $order->status || 'processing' === $order->status || 'completed' === $order->status ) {
+			if ( 'pending' === $order->get_status() || 'processing' === $order->get_status() || 'completed' === $order->get_status() ) {
 
 					$code = '';
 				if ( $order->get_used_coupons() ) {
@@ -418,7 +418,7 @@ function leaddyno_order_status_changed( $order_id ) {
 
 					$req = array(
 						'key'             => $options['private_key'],
-						'email'           => $order->billing_email,
+						'email'           => $order->get_billing_email(),
 						'purchase_code'   => ltrim( $order->get_order_number(), '#' ),
 						'purchase_amount' => $total,
 						'code'            => $code,
@@ -435,11 +435,11 @@ function leaddyno_order_status_changed( $order_id ) {
 						curl_close( $ch );
 						$ld_json = json_decode( $ld_result );
 
-			} elseif ( 'cancelled' === $order->status || 'refunded' === $order->status ) {
+			} elseif ( 'cancelled' === $order->get_status() || 'refunded' === $order->get_status() ) {
 
 					$req = array(
 						'key'           => $options['private_key'],
-						'email'         => $order->billing_email,
+						'email'         => $order->get_billing_email(),
 						'purchase_code' => ltrim( $order->get_order_number(), '#' ),
 					);
 
