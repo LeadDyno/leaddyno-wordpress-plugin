@@ -2,7 +2,7 @@
 /**
  * MyClass Class Doc Comment
  * Plugin Name: LeadDyno WordPress Plugin
- * Version: 1.9.1
+ * Version: 1.9.2
  * Plugin URI: http://www.leaddyno.com/wordpress/
  * Description: Integrates LeadDyno on your WordPress site
  * Author: LeadDyno
@@ -473,7 +473,6 @@ function mm_track_commission( $data ) {
 	if ( ! $options['private_key'] ) {
 		return;
 	}
-	log_errors( 'mm_payment_received data: ' . wp_json_encode( $data ) );
 
 	// access coupons associated with the order.
 	$couponcode = '';
@@ -552,7 +551,6 @@ function mm_track_status_change( $data ) {
 	if ( ! $options['private_key'] ) {
 		return;
 	}
-	log_errors( 'mm_member_status_change data: ' . wp_json_encode( $data ) );
 
 	if ( '2' === $data['status'] || '7' === $data['status'] || '8' === $data['status'] ) {
 
