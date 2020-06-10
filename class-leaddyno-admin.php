@@ -1,14 +1,14 @@
 <?php
 /**
- * MyClass Class Doc Comment
+ * LeadDyno_Admin
  * Plugin Name: LeadDyno WordPress Plugin
- * Version: 1.9.2
+ * Version: 1.10.2
  * Plugin URI: http://www.leaddyno.com/wordpress/
  * Description: Integrates LeadDyno on your WordPress site
  * Author: LeadDyno
  * Author URI: http://www.leaddyno.com/
  *
- * @package  MyPackage
+ * @package  leaddyno
  * @link http://www.leaddyno.com/wordpress/
  */
 
@@ -313,6 +313,14 @@ function leaddyno_get_options() {
 	return $options;
 }
 
+function leaddyno_user_agent() {
+    $ua_str = "LD-Wordpress/" . $wp_version;
+    if ( class_exists( 'woocommerce' ) ) {
+        $ua_str = $ua_str . " WooCommerce/" . $woocommerce->version;
+    }
+    return $ua_str;
+}
+
 /**
  * Default options for LeadDyno for WordPress plugin
  *
@@ -359,6 +367,7 @@ function leaddyno_script() {
 <script type="text/javascript" src="https://static.leaddyno.com/js"></script>
 <script>
 LeadDyno.key = "<?php echo esc_html( $options['public_key'] ); ?>";
+LeadDyno.channel = "wordpress";
 <?php
     if ( $options['domain'] ) {
         echo "LeadDyno.domain = '" . esc_html( $options['domain'] ) . "';\n";
@@ -430,6 +439,7 @@ function leaddyno_order_status_changed( $order_id ) {
 						curl_setopt( $ch, CURLOPT_URL, $url );
 						curl_setopt( $ch, CURLOPT_POST, 1 );
 						curl_setopt( $ch, CURLOPT_POSTFIELDS, $fields_string );
+						curl_setopt($curl,CURLOPT_USERAGENT, leaddyno_user_agent());
 						curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
 						$ld_result = curl_exec( $ch );
 						curl_close( $ch );
@@ -449,6 +459,7 @@ function leaddyno_order_status_changed( $order_id ) {
 					curl_setopt( $ch, CURLOPT_URL, $url );
 					curl_setopt( $ch, CURLOPT_CUSTOMREQUEST, 'DELETE' );
 					curl_setopt( $ch, CURLOPT_POSTFIELDS, $fields_string );
+					curl_setopt($curl,CURLOPT_USERAGENT, leaddyno_user_agent());
 					curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
 					$ld_result = curl_exec( $ch );
 					curl_close( $ch );
@@ -496,6 +507,7 @@ function mm_track_commission( $data ) {
 	curl_setopt( $ch, CURLOPT_URL, $url );
 	curl_setopt( $ch, CURLOPT_POST, 1 );
 	curl_setopt( $ch, CURLOPT_POSTFIELDS, $fields_string );
+	curl_setopt($curl,CURLOPT_USERAGENT, leaddyno_user_agent());
 	curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
 	$ld_result = curl_exec( $ch );
 	curl_close( $ch );
@@ -530,6 +542,7 @@ function mm_track_commission_cancel( $data ) {
 	curl_setopt( $ch, CURLOPT_URL, $url );
 	curl_setopt( $ch, CURLOPT_CUSTOMREQUEST, 'DELETE' );
 	curl_setopt( $ch, CURLOPT_POSTFIELDS, $fields_string );
+	curl_setopt($curl,CURLOPT_USERAGENT, leaddyno_user_agent());
 	curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
 	$ld_result = curl_exec( $ch );
 	curl_close( $ch );
@@ -565,6 +578,7 @@ function mm_track_status_change( $data ) {
 		curl_setopt( $ch, CURLOPT_URL, $url );
 		curl_setopt( $ch, CURLOPT_CUSTOMREQUEST, 'DELETE' );
 		curl_setopt( $ch, CURLOPT_POSTFIELDS, $fields_string );
+		curl_setopt($curl,CURLOPT_USERAGENT, leaddyno_user_agent());
 		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
 		$ld_result = curl_exec( $ch );
 		curl_close( $ch );

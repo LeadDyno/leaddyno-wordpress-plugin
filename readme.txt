@@ -1,20 +1,33 @@
 === LeadDyno Wordpress Plugin ===
 Contributors: leaddyno
 Tags: analytics, statistics, leaddyno, affiliate, outbound links, analysis
-Requires at least: 3.0
-Tested up to: 4.9.4
-Stable tag: 1.9.2
+Requires at least: 4.0
+Tested up to: 5.3.2
+Stable tag: 1.10.2
 
 Integrates the LeadDyno affiliate tracking and web analytics service into your blog/wordpress/woocommerce site.
 
 
 == Description ==
 
-This plugin integrates LeadDyno with wordpress. It handles installing the LeadDyno
-javascript into every page. Optionally you can set your domain if your site is split
-across several subdomains as well enable paypal integration if you have paypal
-buttons on your site that you want LeadDyno to track.
+This plugin integrates LeadDyno affiliate tracking software with Wordpress by installing the LeadDyno javascript into every page. LeadDyno tracks visitors and leads. If your Wordpress site has WooCommerce enabled, it will also capture purchases and upload the purchase information to your LeadDyno account. LeadDyno allows you to set up your affiliate marketing or referral program on Wordpress/Woocommerce in a few easy steps. Drive more traffic and increase sales with an affiliate program. 
 
+For a complete guide for how to use LeadDyno, visit [LeadDyno docs](https://docs.leaddyno.com/). 
+
+Key Features:
+ 
+*  Customize your own branded affiliate management portal website.
+*  Real-time click and commission tracking. 
+*  Give your affiliates a mobile app for reporting and sharing content. 
+*  Create your commission plan & terms. Reward affiliates for product sales, leads, visitors, or line items.
+*  Enable our Paypal integration to track all sales using Paypal. 
+*  LeadDyno tracking goes beyond tracking for affiliates. Monitor the success of all of your marketing efforts with our tracking software. Track referrals from Adwords, Facebook, social shares and email marketing. 
+*  Automatically invite new customers to join your affiliate program.
+*  Create email marketing drip campaigns for actions such as post-purchase or inquiry after cancelation. 
+*  Send affiliate newsletters. 
+*  Give affiliates access to a library of shareable content to promote your brand. (email, Facebook, LinkedIn, Twitter, banners)
+*  Setup Multi-Level Marketing (MLM) Up to 10 levels!
+*  Bulk pay affiliates commissions using Paypal, Coinbase, or other payment integrations.
 
 == Installation ==
 
@@ -26,11 +39,22 @@ buttons on your site that you want LeadDyno to track.
 
 == Screenshots ==
 
-1. The LeadDyno Wordpress plugin settings.
-2. The LeadDyno dashboard page.
+1. The LeadDyno dashboard.
+2. The LeadDyno affiliate desktop.
+3. The LeadDyno traffic dashboard.
+4. The LeadDyno commission dashboard.
+5. The LeadDyno tools page.
 
 
 == Changelog ==
+
+= 1.10.2 =
+
+* General updates
+
+= 1.9.3 =
+
+* General updates
 
 = 1.9.2 =
 
