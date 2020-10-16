@@ -2,8 +2,8 @@
 Contributors: leaddyno
 Tags: analytics, statistics, leaddyno, affiliate, outbound links, analysis
 Requires at least: 4.0
-Tested up to: 5.3.2
-Stable tag: 1.10.3
+Tested up to: 5.4.2
+Stable tag: 1.10.4
 
 Integrates the LeadDyno affiliate tracking and web analytics service into your blog/wordpress/woocommerce site.
 
@@ -12,7 +12,7 @@ Integrates the LeadDyno affiliate tracking and web analytics service into your b
 
 This plugin integrates LeadDyno affiliate tracking software with Wordpress by installing the LeadDyno javascript into every page. LeadDyno tracks visitors and leads. If your Wordpress site has WooCommerce enabled, it will also capture purchases and upload the purchase information to your LeadDyno account. LeadDyno allows you to set up your affiliate marketing or referral program on Wordpress/Woocommerce in a few easy steps. Drive more traffic and increase sales with an affiliate program. 
 
-For a complete guide for how to use LeadDyno, visit [LeadDyno docs](https://docs.leaddyno.com/). 
+For a complete guide for how to use LeadDyno, visit [LeadDyno docs](https://help.leaddyno.com/).
 
 Key Features:
  
@@ -47,6 +47,10 @@ Key Features:
 
 
 == Changelog ==
+
+= 1.10.4 =
+
+* Minor updates
 
 = 1.10.3 =
 

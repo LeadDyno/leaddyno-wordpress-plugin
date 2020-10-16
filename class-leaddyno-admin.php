@@ -2,7 +2,7 @@
 /**
  * LeadDyno_Admin
  * Plugin Name: LeadDyno WordPress Plugin
- * Version: 1.10.3
+ * Version: 1.10.4
  * Plugin URI: http://www.leaddyno.com/wordpress/
  * Description: Integrates LeadDyno on your WordPress site
  * Author: LeadDyno
@@ -79,14 +79,10 @@ if ( ! class_exists( 'LeadDyno_Admin' ) ) {
 		 * @return string
 		 */
 		public function add_action_link( $links, $file ) {
-			static $this_plugin;
-			if ( empty( $this_plugin ) ) {
-				$this_plugin = $this->filename;
-			}
-			if ( $file === $this_plugin ) {
-				$settings_link = '<a href="' . $this->plugin_options_url() . '">' . __( 'Settings' ) . '</a>';
-				array_unshift( $links, $settings_link );
-			}
+		    if ($file == plugin_basename(__FILE__)) {
+                $settings_link = '<a href="' . $this->plugin_options_url() . '">' . __( 'Settings' ) . '</a>';
+                array_unshift( $links, $settings_link );
+            }
 			return $links;
 		}
 
