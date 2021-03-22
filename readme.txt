@@ -2,8 +2,8 @@
 Contributors: leaddyno
 Tags: analytics, statistics, leaddyno, affiliate, outbound links, analysis
 Requires at least: 4.0
-Tested up to: 5.4.2
-Stable tag: 1.10.4
+Tested up to: 5.7
+Stable tag: 1.10.5
 
 Integrates the LeadDyno affiliate tracking and web analytics service into your blog/wordpress/woocommerce site.
 
@@ -47,6 +47,10 @@ Key Features:
 
 
 == Changelog ==
+
+= 1.10.5 = 
+
+* Confirm compatibility with WordPress 5.7.
 
 = 1.10.4 =
 

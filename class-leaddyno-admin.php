@@ -2,7 +2,7 @@
 /**
  * LeadDyno_Admin
  * Plugin Name: LeadDyno WordPress Plugin
- * Version: 1.10.4
+ * Version: 1.10.5
  * Plugin URI: http://www.leaddyno.com/wordpress/
  * Description: Integrates LeadDyno on your WordPress site
  * Author: LeadDyno
